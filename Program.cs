@@ -32,10 +32,8 @@ int Quadrato(int value)
 
 Console.WriteLine(result + " è il suo quadrato");
 
-
-int[] arrayToElevate = { 1, 2, 3, 4, 5, 6 };
    
-int[] print = ElevaArrayAlQuadrato(arrayToElevate);
+int[] print = ElevaArrayAlQuadrato(arrayToPrint);
 
 int[] ElevaArrayAlQuadrato(int[] array)
 { 
@@ -52,10 +50,8 @@ int[] ElevaArrayAlQuadrato(int[] array)
 
 StampaArray(print);
 Console.WriteLine();
-
-int[] arrayToSum = { 1, 2, 3, 4, 5, 6 };
  
-int totalArraySum = SommaElementiArray(arrayToSum);
+int totalArraySum = SommaElementiArray(arrayToPrint);
 
 int SommaElementiArray(int[] array){
 

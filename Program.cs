@@ -74,18 +74,23 @@ Console.WriteLine(totalArraySum);
 int[] numeri = { 2, 6, 7, 5, 3, 9 };
 
 AllFunction(numeri);
-
-Console.WriteLine("Scrivi la lunghezza di un array");
-int ArrayLength = Convert.ToInt32(Console.ReadLine());
-int[] ArrayToPopolate = new int[ArrayLength];
-
-for (int i = 0; i < ArrayToPopolate.Length; i++)
+bool loop = true;
+while (loop)
 {
-    Console.WriteLine("scrivi un valore da inserire");
-    ArrayToPopolate[i] = Convert.ToInt32(Console.ReadLine());
-}
+    Console.WriteLine("Scrivi la lunghezza di un array");
+    int ArrayLength = Convert.ToInt32(Console.ReadLine());
+    int[] ArrayToPopolate = new int[ArrayLength];
 
-AllFunction(ArrayToPopolate);
+    for (int i = 0; i < ArrayToPopolate.Length; i++)
+    {
+        Console.WriteLine("scrivi un valore da inserire");
+        ArrayToPopolate[i] = Convert.ToInt32(Console.ReadLine());
+    }
+
+    AllFunction(ArrayToPopolate);
+
+
+}
 
 void AllFunction(int[] numeri)
 {

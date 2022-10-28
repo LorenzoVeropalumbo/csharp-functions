@@ -75,21 +75,33 @@ int[] numeri = { 2, 6, 7, 5, 3, 9 };
 
 AllFunction(numeri);
 bool loop = true;
+
 while (loop)
 {
-    Console.WriteLine("Scrivi la lunghezza di un array");
-    int ArrayLength = Convert.ToInt32(Console.ReadLine());
-    int[] ArrayToPopolate = new int[ArrayLength];
+    Console.WriteLine("continuare scrivi yes o no");
+    string continueTest = Console.ReadLine().ToLower();
 
-    for (int i = 0; i < ArrayToPopolate.Length; i++)
+    if(continueTest == "no")
     {
-        Console.WriteLine("scrivi un valore da inserire");
-        ArrayToPopolate[i] = Convert.ToInt32(Console.ReadLine());
+        loop = false;
+        break;
+    } 
+    else
+    {
+
+        Console.WriteLine("Scrivi la lunghezza di un array");
+        int ArrayLength = Convert.ToInt32(Console.ReadLine());
+        int[] ArrayToPopolate = new int[ArrayLength];
+
+        for (int i = 0; i < ArrayToPopolate.Length; i++)
+        {
+            Console.WriteLine("scrivi un valore da inserire");
+            ArrayToPopolate[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        AllFunction(ArrayToPopolate);
+
     }
-
-    AllFunction(ArrayToPopolate);
-
-
 }
 
 void AllFunction(int[] numeri)

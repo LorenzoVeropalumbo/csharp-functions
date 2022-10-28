@@ -30,7 +30,7 @@ int Quadrato(int value)
     return value * value;
 }
 
-Console.WriteLine(result + "è il suo quadrato");
+Console.WriteLine(result + " è il suo quadrato");
 
 
 int[] arrayToElevate = { 1, 2, 3, 4, 5, 6 };

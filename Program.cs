@@ -11,9 +11,9 @@ void StampaArray(int[] array)
     for (int i = 0; i < array.Length; i++)
     {
         if(i == array.Length - 1)   
-            Console.Write("elemento " + array[i]);
+            Console.Write(array[i]);
         else
-            Console.Write("elemento " + array[i] + ",");
+            Console.Write(array[i] + ",");
 
     }
     Console.Write(" ]");

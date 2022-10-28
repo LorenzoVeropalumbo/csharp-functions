@@ -117,7 +117,7 @@ int SommaElementiRicorsivo(int userNumberSelected,int index,int result)
     } 
     else
     {
-        if(result > index + 1)
+        if(result - 1 > index)
         {
             userNumberSelected += userNumberSelected * index;
             index++;
@@ -130,5 +130,32 @@ int SommaElementiRicorsivo(int userNumberSelected,int index,int result)
     }
 
 }
+Console.WriteLine("il risultato ricorsivo è " + resultRicorsive);
 
-Console.WriteLine(resultRicorsive);
+
+
+Console.WriteLine("Inserisci un numero");
+int userNumberSelected1 = Convert.ToInt32(Console.ReadLine());
+int result1 = 0;
+int result2 = 1;
+int result3 = 1;
+int index1 = 1;
+int result4 = SommaElementiFibonacci(userNumberSelected1, index1, result1, result2, result3);
+
+int SommaElementiFibonacci(int userNumberSelected1, int index1, int result1, int result2, int result3)
+{
+    if (index1 < userNumberSelected1)
+    {
+        result3 = result1 + result2;
+        result1 = result2;
+        result2 = result3;
+        index1++;
+        return SommaElementiFibonacci(userNumberSelected1, index1, result1, result2, result3);
+    } 
+    else
+    {
+        return result3;
+    }
+}
+
+Console.WriteLine("il risultato ricorsivo è " + result4);

@@ -159,3 +159,29 @@ int SommaElementiFibonacci(int userNumberSelected1, int index1, int result1, int
 }
 
 Console.WriteLine("il risultato ricorsivo è " + result4);
+
+
+{
+    Console.WriteLine("Inserisci un numero");
+    int userNumberSelected2 = Convert.ToInt32(Console.ReadLine());
+
+    int r1 = 0;
+    int r2 = 1;
+    int r3 = 0;
+    int r4 = SommaElementiFibonacci2(userNumberSelected1, r1, r2, r3);
+
+    int SommaElementiFibonacci2(int userNumberSelected1, int r1, int r2, int r3)
+    {
+
+        for (int i = 1; i < userNumberSelected2; ++i)   
+        {
+            r3 = r1 + r2;
+            r1 = r2;
+            r2 = r3;
+        }
+
+        return r3;
+    }
+
+    Console.WriteLine("il risultato ricorsivo è " + r4);
+}

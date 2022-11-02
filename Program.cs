@@ -103,85 +103,158 @@ using System;
 //    Console.Write(" ]");
 //}
 
-Console.WriteLine("Inserisci un numero");
-int userNumberSelected = Convert.ToInt32(Console.ReadLine());
-int result = userNumberSelected;
-int index = 1;
-int resultRicorsive = SommaElementiRicorsivo(userNumberSelected, index, result);
+//Console.WriteLine("Inserisci un numero");
+//int userNumberSelected = Convert.ToInt32(Console.ReadLine());
+//int result = userNumberSelected;
+//int index = 1;
+//int resultRicorsive = SommaElementiRicorsivo(userNumberSelected, index, result);
 
-int SommaElementiRicorsivo(int userNumberSelected,int index,int result)
+//int SommaElementiRicorsivo(int userNumberSelected, int index, int result)
+//{
+//if (result == 0)
+//{
+//return 1;
+//}
+//else
+//{
+//if (result - 1 > index)
+//{
+//userNumberSelected += userNumberSelected * index;
+//index++;
+//return SommaElementiRicorsivo(userNumberSelected, index, result);
+//}
+//else
+//{
+//return userNumberSelected;
+//}
+//}
+
+//}
+//Console.WriteLine("il risultato ricorsivo è " + resultRicorsive);
+
+
+
+//Console.WriteLine("Inserisci un numero");
+//int userNumberSelected1 = Convert.ToInt32(Console.ReadLine());
+//int result1 = 0;
+//int result2 = 1;
+//int result3 = 1;
+//int index1 = 1;
+//int result4 = SommaElementiFibonacci(userNumberSelected1, index1, result1, result2, result3);
+
+//int SommaElementiFibonacci(int userNumberSelected1, int index1, int result1, int result2, int result3)
+//{
+//if (index1 < userNumberSelected1)
+//{
+//result3 = result1 + result2;
+//result1 = result2;
+//result2 = result3;
+//index1++;
+//return SommaElementiFibonacci(userNumberSelected1, index1, result1, result2, result3);
+//}
+//else
+//{
+//return result3;
+//}
+//}
+
+//Console.WriteLine("il risultato ricorsivo è " + result4);
+
+
+//{
+//Console.WriteLine("Inserisci un numero");
+//int userNumberSelected2 = Convert.ToInt32(Console.ReadLine());
+
+//int r1 = 0;
+//int r2 = 1;
+//int r3 = 0;
+//int r4 = SommaElementiFibonacci2(userNumberSelected1, r1, r2, r3);
+
+//int SommaElementiFibonacci2(int userNumberSelected1, int r1, int r2, int r3)
+//{
+
+//for (int i = 1; i < userNumberSelected2; ++i)
+//{
+//r3 = r1 + r2;
+//r1 = r2;
+//r2 = r3;
+//}
+
+//return r3;
+//}
+
+//Console.WriteLine("il risultato ricorsivo è " + r4);
+//}
 {
-    if (result == 0)
+    //1. chiediamo all'utente se vuole criptare o decriptare un testo
+    Console.WriteLine("Criptare o decriptare?");
+    string mode = Console.ReadLine();
+
+
+
+    //3. chiede di inserire il testo da criptare/decriptare
+    Console.Write("Inserisci una frase:");
+    string fraseUtente = Console.ReadLine();
+    char[] frase = new char[fraseUtente.Length];
+
+
+    if (mode == "decodifica")
     {
-        return 1;
-    } 
+        Console.WriteLine("possibili decriptazioni:");
+        for (int k = 1; k <= 10; k++)
+        {
+            Console.Write("key:" + k + " --> ");
+
+            for (int i = 0; i < frase.Length; i++)
+            {
+
+                Console.Write(Convert.ToChar(fraseUtente[i] - k));
+            }
+
+            Console.WriteLine();
+        }
+
+
+    }
     else
     {
-        if(result - 1 > index)
+        //2. chiedete una chiave numero da 1 a 10
+        Console.Write("Inserisci la chiave (numero da 1 a 10):");
+        int key = Convert.ToInt32(Console.ReadLine());
+
+        //4. il sistema effettua la criptazione / decriptazione
+        switch (mode)
         {
-            userNumberSelected += userNumberSelected * index;
-            index++;
-            return SommaElementiRicorsivo(userNumberSelected, index, result);
-        } 
-        else
-        {
-            return userNumberSelected;
-        }
-    }
+            case "criptare":
 
-}
-Console.WriteLine("il risultato ricorsivo è " + resultRicorsive);
+                for (int i = 0; i < frase.Length; i++)
+                {
+                    frase[i] = Convert.ToChar(fraseUtente[i] + key);
+                }
 
+                break;
 
+            case "decriptare":
 
-Console.WriteLine("Inserisci un numero");
-int userNumberSelected1 = Convert.ToInt32(Console.ReadLine());
-int result1 = 0;
-int result2 = 1;
-int result3 = 1;
-int index1 = 1;
-int result4 = SommaElementiFibonacci(userNumberSelected1, index1, result1, result2, result3);
+                for (int i = 0; i < frase.Length; i++)
+                {
+                    frase[i] = Convert.ToChar(fraseUtente[i] - key);
+                }
 
-int SommaElementiFibonacci(int userNumberSelected1, int index1, int result1, int result2, int result3)
-{
-    if (index1 < userNumberSelected1)
-    {
-        result3 = result1 + result2;
-        result1 = result2;
-        result2 = result3;
-        index1++;
-        return SommaElementiFibonacci(userNumberSelected1, index1, result1, result2, result3);
-    } 
-    else
-    {
-        return result3;
-    }
-}
-
-Console.WriteLine("il risultato ricorsivo è " + result4);
+                break;
 
 
-{
-    Console.WriteLine("Inserisci un numero");
-    int userNumberSelected2 = Convert.ToInt32(Console.ReadLine());
-
-    int r1 = 0;
-    int r2 = 1;
-    int r3 = 0;
-    int r4 = SommaElementiFibonacci2(userNumberSelected1, r1, r2, r3);
-
-    int SommaElementiFibonacci2(int userNumberSelected1, int r1, int r2, int r3)
-    {
-
-        for (int i = 1; i < userNumberSelected2; ++i)   
-        {
-            r3 = r1 + r2;
-            r1 = r2;
-            r2 = r3;
         }
 
-        return r3;
-    }
 
-    Console.WriteLine("il risultato ricorsivo è " + r4);
+
+
+        //5. il sistema mostra a video il testo criptato
+        Console.Write("Questa la tua frase {0}:", mode == "criptare" ? "criptata" : "decriptata");
+
+        for (int i = 0; i < frase.Length; i++)
+        {
+            Console.Write(frase[i]);
+        }
+    }
 }
